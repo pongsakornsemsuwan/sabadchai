@@ -71,43 +71,16 @@ export default class MainHeader extends React.Component {
         }
         else
         {
-            console.log('MainHeader');
-            if(this.props.activeNav === "login"){
-                loginButton = (
-                    <li className="active">
-                        <Link className="link" to="/login">
-                            Login
-                        </Link>
-                    </li>
-                )
-            }else{
-                loginButton = (
-                    <li>
-                        <Link className="link" to="/login">
-                            Login
-                        </Link>
-                    </li>
-                )
-            }
+            let loginButtonClass = this.props.activeNav === "login" ? "active" : "";
+            loginButton = (<li className={loginButtonClass}><a href="/login">Login</a></li>)
         }
 
         let signupButton;
         if( currentUser ){
 
         } else {
-            if(this.props.activeNav === "signup"){
-
-                signupButton = (<li className="active"><Link className="link" to="/signup">
-                    Sign Up
-                </Link></li>);
-            }else{
-                signupButton = (<li>
-                    <Link className="link" to="/signup">
-                        Sign Up
-                    </Link>
-                    </li>
-);
-            }
+            let signUpButtonClass = this.props.activeNav === "signup" ? "active" : "";
+            signupButton = (<li className={signUpButtonClass}><Link className="link" to="/signup">Sign Up</Link></li>);
         }
 
         return (

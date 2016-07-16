@@ -7,10 +7,10 @@ export default class App extends React.Component {
 
 
     render() {
-        console.log(this.props.route.path);
+        console.log('APP');
         return (
             <div>
-                <MainHeader/>
+                <MainHeader activeNav={this.props.routes[this.props.routes.length-1].path}/>
                 {this.props.children}
                 <MainFooter/>
             </div>
